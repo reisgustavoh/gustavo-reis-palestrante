@@ -67,7 +67,7 @@ export default function Home() {
         "LLMs e transformação do trabalho do conhecimento",
         "Casos de uso de IA generativa em empresas",
         "Gestão de conhecimento com IA",
-        "Preparação para o futuro da IA",
+        "Preparação para o futuro da IA.",
       ],
       destaque: true,
     },
