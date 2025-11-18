@@ -21,6 +21,7 @@ import {
   Star,
   Zap,
   Building2,
+  BookOpen
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -39,13 +40,45 @@ export default function Home() {
     setFormData({ nome: "", email: "", empresa: "", cargo: "", mensagem: "" });
   };
 
-  // Bloco 1: Estratégia e Estrutura
+  const blocoFundamentos = [
+    {
+      icon: <BookOpen className="h-10 w-10" />,
+      titulo: "Introdução à Inteligência Artificial",
+      subtitulo: "O Que É, Como Funciona e Como Começar com Segurança",
+      beneficio:
+        "Entenda de forma clara e prática o que é IA hoje, como ela funciona, onde gera valor e como iniciar a adoção com segurança e realismo.",
+      topicos: [
+        "Fundamentos de IA explicados sem jargão",
+        "IA tradicional, machine learning, IA generativa e agentes",
+        "Onde IA realmente gera valor nos negócios",
+        "Principais casos de uso corporativos",
+      ],
+      destaque: true,
+    },
+
+    // MIGRADO DO BLOCO 5
+    {
+      icon: <Sparkles className="h-10 w-10" />,
+      titulo: "IA Generativa e o Renascimento do Conhecimento Corporativo",
+      subtitulo: "Futuro do Trabalho e Reinvenção Corporativa",
+      beneficio:
+        "Descubra como IA generativa está redefinindo criação de conhecimento, produtividade e inovação nas organizações",
+      topicos: [
+        "LLMs e transformação do trabalho do conhecimento",
+        "Casos de uso de IA generativa em empresas",
+        "Gestão de conhecimento com IA",
+        "Preparação para o futuro da IA",
+      ],
+      destaque: true,
+    },
+  ];
   const blocoEstrategia = [
     {
       icon: <Target className="h-10 w-10" />,
       titulo: "Por que a IA Falha nas Empresas",
       subtitulo: "(e Como Corrigir o Sistema, Não o Modelo)",
-      beneficio: "Entenda os motivos reais por trás do fracasso de projetos de IA e aprenda a estruturar sistemas organizacionais que garantem sucesso",
+      beneficio:
+        "Entenda os motivos reais por trás do fracasso de projetos de IA e aprenda a estruturar sistemas organizacionais que garantem sucesso",
       topicos: [
         "Diagnóstico de falhas sistêmicas",
         "Alinhamento estratégico vs. otimização técnica",
@@ -58,7 +91,8 @@ export default function Home() {
       icon: <Building2 className="h-10 w-10" />,
       titulo: "IA como Infraestrutura de Negócio",
       subtitulo: "Visão Sistêmica e Adoção Organizacional",
-      beneficio: "Transforme IA de projeto piloto para infraestrutura crítica que sustenta operações e decisões estratégicas",
+      beneficio:
+        "Transforme IA de projeto piloto para infraestrutura crítica que sustenta operações e decisões estratégicas",
       topicos: [
         "IA como capacidade organizacional",
         "Arquitetura de dados para escala",
@@ -68,14 +102,13 @@ export default function Home() {
       destaque: true,
     },
   ];
-
-  // Bloco 2: Liderança e Governança
   const blocoLideranca = [
     {
       icon: <Users className="h-8 w-8" />,
       titulo: "Liderando Organizações Impulsionadas por IA",
       subtitulo: "Cultura, Confiança e Transformação Executiva",
-      beneficio: "Desenvolva as competências de liderança necessárias para conduzir transformação digital com IA em grande escala",
+      beneficio:
+        "Desenvolva as competências de liderança necessárias para conduzir transformação digital com IA em grande escala",
       topicos: [
         "Visão estratégica de IA",
         "Construção de cultura data-driven",
@@ -87,7 +120,8 @@ export default function Home() {
       icon: <ShieldCheck className="h-8 w-8" />,
       titulo: "Governança de IA",
       subtitulo: "Do Compliance à Confiança Institucional",
-      beneficio: "Implemente frameworks de governança que vão além da conformidade, construindo confiança e valor de longo prazo",
+      beneficio:
+        "Implemente frameworks de governança que vão além da conformidade, construindo confiança e valor de longo prazo",
       topicos: [
         "Frameworks de governança de IA",
         "GDPR, Lei de IA e compliance",
@@ -96,14 +130,13 @@ export default function Home() {
       ],
     },
   ];
-
-  // Bloco 3: Valor e Execução
   const blocoValor = [
     {
       icon: <TrendingUp className="h-8 w-8" />,
       titulo: "Do Modelo ao Valor",
       subtitulo: "Medindo o Impacto Real da IA",
-      beneficio: "Aprenda a medir e comunicar o valor real gerado por IA, desde métricas técnicas até impacto financeiro",
+      beneficio:
+        "Aprenda a medir e comunicar o valor real gerado por IA, desde métricas técnicas até impacto financeiro",
       topicos: [
         "Métricas de negócio vs. métricas técnicas",
         "Cálculo de ROI em projetos de IA",
@@ -115,7 +148,8 @@ export default function Home() {
       icon: <Lightbulb className="h-8 w-8" />,
       titulo: "Forecasting Inteligente",
       subtitulo: "O Laboratório para Aprender IA de Verdade",
-      beneficio: "Use previsão de demanda como caso prático para dominar conceitos avançados de IA aplicada a negócios",
+      beneficio:
+        "Use previsão de demanda como caso prático para dominar conceitos avançados de IA aplicada a negócios",
       topicos: [
         "Séries temporais e modelos preditivos",
         "Integração de variáveis de negócio",
@@ -125,22 +159,6 @@ export default function Home() {
     },
   ];
 
-  // Bloco 4: Futuro e Inovação
-  const blocoFuturo = [
-    {
-      icon: <Sparkles className="h-10 w-10" />,
-      titulo: "IA Generativa e o Renascimento do Conhecimento Corporativo",
-      subtitulo: "Futuro do Trabalho e Reinvenção Corporativa",
-      beneficio: "Descubra como IA generativa está redefinindo criação de conhecimento, produtividade e inovação nas organizações",
-      topicos: [
-        "LLMs e transformação do trabalho do conhecimento",
-        "Casos de uso de IA generativa em empresas",
-        "Gestão de conhecimento com IA",
-        "Preparação para o futuro da IA",
-      ],
-      destaque: true,
-    },
-  ];
 
   return (
     <div className="min-h-screen">
@@ -148,41 +166,41 @@ export default function Home() {
 
 
 
-{/********************************* */}
+      {/********************************* */}
 
-<section
-  id="hero"
-  className="relative bg-gradient-to-br from-primary via-primary/90 to-primary/80 py-16 sm:py-20 md:py-28 overflow-hidden"
->
-  <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-10"></div>
-  <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent"></div>
+      <section
+        id="hero"
+        className="relative bg-gradient-to-br from-primary via-primary/90 to-primary/80 py-16 sm:py-20 md:py-28 overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent"></div>
 
-  <div className="container relative z-10 w-full">
+        <div className="container relative z-10 w-full">
 
-    <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
 
-      {/* COLUNA DE TEXTO */}
-      <div className="order-2 lg:order-1 text-white text-center lg:text-left space-y-5 min-w-0 w-full">
+            {/* COLUNA DE TEXTO */}
+            <div className="order-2 lg:order-1 text-white text-center lg:text-left space-y-5 min-w-0 w-full">
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight break-words">
-          Transforme sua Organização com{" "}
-          <span className="text-accent">Inteligência Artificial</span>
-        </h1>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight break-words">
+                Transforme sua Organização com{" "}
+                <span className="text-accent">Inteligência Artificial</span>
+              </h1>
 
-        <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-          Palestras e workshops que capacitam C-levels e Executivos a estruturar,
-          governar e escalar IA com segurança e impacto comprovado.
-        </p>
+              <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
+                Palestras e workshops que capacitam C-levels e Executivos a estruturar,
+                governar e escalar IA com segurança e impacto comprovado.
+              </p>
 
-        <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-          Mais de <strong>700 modelos implementados</strong>, gerando
-          <strong> R$750 milhões</strong> em impacto para empresas como Azul,
-          Hapvida e Vallourec.
-        </p>
+              <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                Mais de <strong>700 modelos implementados</strong>, gerando
+                <strong> R$750 milhões</strong> em impacto para empresas como Azul,
+                Hapvida e Vallourec.
+              </p>
 
-        {/* BOTÕES */}
-        <div
-          className="
+              {/* BOTÕES */}
+              <div
+                className="
             flex flex-col sm:flex-row 
             gap-3 md:gap-4 
             w-full 
@@ -190,77 +208,77 @@ export default function Home() {
             items-center 
             text-center
           "
-        >
-          <Button
-            className="
+              >
+                <Button
+                  className="
               bg-secondary text-secondary-foreground shadow-xl font-semibold
               text-sm sm:text-base md:text-lg
               px-4 py-2 sm:px-6 sm:py-3
               w-full sm:w-auto max-w-[280px]
               whitespace-normal leading-snug
             "
-            onClick={() =>
-              document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })
-            }
-          >
-            Quero uma Palestra
-            <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-          </Button>
+                  onClick={() =>
+                    document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })
+                  }
+                >
+                  Quero uma Palestra
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                </Button>
 
-          <Button
-            variant="outline"
-            className="
+                <Button
+                  variant="outline"
+                  className="
               bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur
               text-sm sm:text-base md:text-lg
               px-4 py-2 sm:px-6 sm:py-3
               w-full sm:w-auto max-w-[280px]
               whitespace-normal leading-snug
             "
-            onClick={() =>
-              document.getElementById('palestras')?.scrollIntoView({ behavior: 'smooth' })
-            }
-          >
-            Ver Temas de Palestras
-          </Button>
-        </div>
+                  onClick={() =>
+                    document.getElementById('palestras')?.scrollIntoView({ behavior: 'smooth' })
+                  }
+                >
+                  Ver Temas de Palestras
+                </Button>
+              </div>
 
-        {/* SOCIAL PROOF */}
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-4 pt-6 w-full">
+              {/* SOCIAL PROOF */}
+              <div className="grid grid-cols-2 md:grid-cols-2 gap-4 pt-6 w-full">
 
-          <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20 text-center w-full">
-            <p className="text-2xl md:text-3xl font-bold text-accent">700+</p>
-            <p className="text-xs md:text-sm text-white/80">Modelos Implementados</p>
-          </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20 text-center w-full">
+                  <p className="text-2xl md:text-3xl font-bold text-accent">700+</p>
+                  <p className="text-xs md:text-sm text-white/80">Modelos Implementados</p>
+                </div>
 
-          <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20 text-center w-full">
-            <p className="text-2xl md:text-3xl font-bold text-accent">R$750M</p>
-            <p className="text-xs md:text-sm text-white/80">Impacto Gerado</p>
-          </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20 text-center w-full">
+                  <p className="text-2xl md:text-3xl font-bold text-accent">R$750M</p>
+                  <p className="text-xs md:text-sm text-white/80">Impacto Gerado</p>
+                </div>
 
-          <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20 text-center w-full">
-            <p className="text-2xl md:text-3xl font-bold text-accent">20 anos</p>
-            <p className="text-xs md:text-sm text-white/80">Experiência</p>
-          </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20 text-center w-full">
+                  <p className="text-2xl md:text-3xl font-bold text-accent">20 anos</p>
+                  <p className="text-xs md:text-sm text-white/80">Experiência</p>
+                </div>
 
-          <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20 text-center w-full">
-            <p className="text-2xl md:text-3xl font-bold text-accent">2.500%</p>
-            <p className="text-xs md:text-sm text-white/80">Produtividade</p>
-          </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20 text-center w-full">
+                  <p className="text-2xl md:text-3xl font-bold text-accent">2.500%</p>
+                  <p className="text-xs md:text-sm text-white/80">Produtividade</p>
+                </div>
 
-        </div>
-      </div>
+              </div>
+            </div>
 
-      {/* COLUNA DA IMAGEM + BADGE */}
-      <div className="order-1 lg:order-2 flex flex-col justify-center items-center lg:items-end min-w-0 w-full space-y-4">
+            {/* COLUNA DA IMAGEM + BADGE */}
+            <div className="order-1 lg:order-2 flex flex-col justify-center items-center lg:items-end min-w-0 w-full space-y-4">
 
-        {/* IMAGEM */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-secondary/20 rounded-full blur-2xl"></div>
+              {/* IMAGEM */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-secondary/20 rounded-full blur-2xl"></div>
 
-          <img
-            src="/gustavo-reis-profile.png"
-            alt="Gustavo Reis - Palestrante especialista em IA"
-            className="
+                <img
+                  src="/gustavo-reis-profile.png"
+                  alt="Gustavo Reis - Palestrante especialista em IA"
+                  className="
               relative
               w-48 h-48
               sm:w-64 sm:h-64
@@ -270,12 +288,12 @@ export default function Home() {
               border-4 border-white/20 shadow-2xl
               max-w-full
             "
-          />
-        </div>
+                />
+              </div>
 
-        {/* BADGE — MOBILE MAIOR AINDA */}
-        <Badge
-          className="
+              {/* BADGE — MOBILE MAIOR AINDA */}
+              <Badge
+                className="
             bg-accent text-accent-foreground border-none 
             text-[10px] sm:text-xs md:text-sm 
             px-4 py-3 font-semibold 
@@ -286,18 +304,18 @@ export default function Home() {
             md:w-80      /* md: acompanha a imagem */
             lg:w-[420px] /* lg: acompanha a imagem */
           "
-        >
-          Especialista em Machine Learning e IA Generativa <br />
-          Diretor de IA na HopAI • Professor FDC
-        </Badge>
+              >
+                Especialista em Machine Learning e IA Generativa <br />
+                Diretor de IA na HopAI • Professor FDC
+              </Badge>
 
-      </div>
+            </div>
 
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
 
-{/********************************* */}
+      {/********************************* */}
 
 
       {/* Por Que Me Contratar Section */}
@@ -471,22 +489,24 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Bloco 1: Estratégia e Estrutura */}
+          {/* Bloco 1: Fundamentos e Introdução */}
           <div className="mb-20">
             <div className="text-center mb-8">
               <Badge className="bg-accent text-accent-foreground mb-3 font-semibold">Bloco 1</Badge>
-              <h3 className="text-2xl md:text-3xl font-bold mb-2">Estratégia e Estrutura</h3>
-              <p className="text-muted-foreground">Visão sistêmica, adoção e maturidade organizacional</p>
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">Fundamentos e Introdução</h3>
+              <p className="text-muted-foreground">
+                Base conceitual para compreender e iniciar a jornada em IA
+              </p>
             </div>
+
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {blocoEstrategia.map((palestra, index) => (
+              {blocoFundamentos.map((palestra, index) => (
                 <Card
                   key={index}
-                  className={`hover:shadow-2xl transition-all ${
-                    palestra.destaque
+                  className={`hover:shadow-2xl transition-all ${palestra.destaque
                       ? "border-4 border-primary bg-gradient-to-br from-primary/5 to-accent/5"
                       : "border-2 hover:border-primary"
-                  }`}
+                    }`}
                 >
                   <CardHeader>
                     <div className="mb-4 text-primary">{palestra.icon}</div>
@@ -509,21 +529,61 @@ export default function Home() {
                         </li>
                       ))}
                     </ul>
-
                   </CardContent>
                 </Card>
               ))}
             </div>
           </div>
 
-          {/* Bloco 2: Liderança e Governança */}
+          {/* Bloco 2: Estratégia e Estrutura */}
           <div className="mb-20">
             <div className="text-center mb-8">
               <Badge className="bg-accent text-accent-foreground mb-3 font-semibold">Bloco 2</Badge>
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">Estratégia e Estrutura</h3>
+              <p className="text-muted-foreground">Visão sistêmica, adoção e maturidade organizacional</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {blocoEstrategia.map((palestra, index) => (
+                <Card
+                  key={index}
+                  className={`hover:shadow-2xl transition-all ${palestra.destaque
+                      ? "border-4 border-primary bg-gradient-to-br from-primary/5 to-accent/5"
+                      : "border-2 hover:border-primary"
+                    }`}
+                >
+                  <CardHeader>
+                    <div className="mb-4 text-primary">{palestra.icon}</div>
+                    <CardTitle className="text-xl">{palestra.titulo}</CardTitle>
+                    <CardDescription className="font-semibold text-accent text-base">
+                      {palestra.subtitulo}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="bg-accent/10 border-l-4 border-accent p-4 mb-4 rounded">
+                      <p className="text-sm font-semibold text-foreground leading-relaxed">
+                        {palestra.beneficio}
+                      </p>
+                    </div>
+                    <ul className="space-y-2 mb-4">
+                      {palestra.topicos.map((topico, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm">
+                          <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span className="text-muted-foreground">{topico}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Bloco 3: Liderança e Governança */}
+          <div className="mb-20">
+            <div className="text-center mb-8">
+              <Badge className="bg-accent text-accent-foreground mb-3 font-semibold">Bloco 3</Badge>
               <h3 className="text-2xl md:text-3xl font-bold mb-2">Liderança e Governança</h3>
-              <p className="text-muted-foreground">
-                Confiança, cultura e liderança na era da IA
-              </p>
+              <p className="text-muted-foreground">Confiança, cultura e liderança na era da IA</p>
             </div>
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {blocoLideranca.map((palestra, index) => (
@@ -556,10 +616,10 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Bloco 3: Valor e Execução */}
-          <div className="mb-20">
+          {/* Bloco 4: Valor e Execução */}
+          <div>
             <div className="text-center mb-8">
-              <Badge className="bg-accent text-accent-foreground mb-3 font-semibold">Bloco 3</Badge>
+              <Badge className="bg-accent text-accent-foreground mb-3 font-semibold">Bloco 4</Badge>
               <h3 className="text-2xl md:text-3xl font-bold mb-2">Valor e Execução</h3>
               <p className="text-muted-foreground">
                 Medição de impacto e aprendizado técnico-estratégico
@@ -596,53 +656,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Bloco 4: Futuro e Inovação */}
-          <div>
-            <div className="text-center mb-8">
-              <Badge className="bg-accent text-accent-foreground mb-3 font-semibold">Bloco 4</Badge>
-              <h3 className="text-2xl md:text-3xl font-bold mb-2">Futuro e Inovação</h3>
-              <p className="text-muted-foreground">
-                IA generativa, futuro do trabalho e reinvenção corporativa
-              </p>
-            </div>
-            <div className="max-w-3xl mx-auto">
-              {blocoFuturo.map((palestra, index) => (
-                <Card
-                  key={index}
-                  className="hover:shadow-2xl transition-all border-4 border-accent bg-gradient-to-br from-accent/5 to-primary/5"
-                >
-                  <CardHeader>
-                    <div className="mb-4 text-accent">{palestra.icon}</div>
-                    <CardTitle className="text-2xl">{palestra.titulo}</CardTitle>
-                    <CardDescription className="font-semibold text-primary text-lg">
-                      {palestra.subtitulo}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="bg-primary/10 border-l-4 border-primary p-4 mb-6 rounded">
-                      <p className="text-base font-semibold text-foreground leading-relaxed">
-                        {palestra.beneficio}
-                      </p>
-                    </div>
-                    <ul className="space-y-3 mb-6">
-                      {palestra.topicos.map((topico, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-sm">
-                          <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                          <span className="text-muted-foreground">{topico}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
           <div className="text-center mt-12">
             <p className="text-lg text-muted-foreground mb-6">
-              Todos os temas podem ser adaptados para o contexto e desafios específicos da sua
-              empresa
+              Todos os temas podem ser adaptados para o contexto e desafios específicos da sua empresa
             </p>
             <Button
               size="lg"
@@ -656,6 +672,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
 
       {/* Resultados Section - Impact Focused */}
       <section id="resultados" className="py-20 md:py-32 bg-gradient-to-br from-primary/10 to-accent/10">
