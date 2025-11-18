@@ -51,7 +51,7 @@ export default function Home() {
         "Fundamentos de IA explicados sem jargão",
         "IA tradicional, machine learning, IA generativa e agentes",
         "Onde IA realmente gera valor nos negócios",
-        "Principais casos de uso corporativos",
+        "Principais casos de uso corporativos.",
       ],
       destaque: true,
     },
