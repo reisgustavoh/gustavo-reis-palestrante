@@ -24,8 +24,11 @@ import {
   BookOpen
 } from "lucide-react";
 import { toast } from "sonner";
+import { useEffect } from "react";
+
 
 export default function Home() {
+
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
@@ -33,6 +36,22 @@ export default function Home() {
     cargo: "",
     mensagem: "",
   });
+
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const target = params.get("scrollTo");
+
+    if (target) {
+      const el = document.getElementById(target);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 300); // espera o DOM estabilizar
+      }
+    }
+  }, []);
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -188,8 +207,7 @@ export default function Home() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-                Palestras e workshops que capacitam C-levels e Executivos a estruturar,
-                governar e escalar IA com segurança e impacto comprovado.
+                Do boardroom ao chão de fábrica: palestras que capacitam toda a organização para uso, governança e adoção em escala de IA com resultados comprovados e segurança.
               </p>
 
               <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
@@ -504,8 +522,8 @@ export default function Home() {
                 <Card
                   key={index}
                   className={`hover:shadow-2xl transition-all ${palestra.destaque
-                      ? "border-4 border-primary bg-gradient-to-br from-primary/5 to-accent/5"
-                      : "border-2 hover:border-primary"
+                    ? "border-4 border-primary bg-gradient-to-br from-primary/5 to-accent/5"
+                    : "border-2 hover:border-primary"
                     }`}
                 >
                   <CardHeader>
@@ -547,8 +565,8 @@ export default function Home() {
                 <Card
                   key={index}
                   className={`hover:shadow-2xl transition-all ${palestra.destaque
-                      ? "border-4 border-primary bg-gradient-to-br from-primary/5 to-accent/5"
-                      : "border-2 hover:border-primary"
+                    ? "border-4 border-primary bg-gradient-to-br from-primary/5 to-accent/5"
+                    : "border-2 hover:border-primary"
                     }`}
                 >
                   <CardHeader>
@@ -1006,11 +1024,11 @@ export default function Home() {
                   <p className="font-semibold text-center mb-4">Outras formas de contato:</p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
-                      href="mailto:reisgustavo@gmail.com"
+                      href="mailto:gustavo@gustavoreis.ia.br"
                       className="flex items-center justify-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                     >
                       <Mail className="h-5 w-5" />
-                      reisgustavo@gmail.com
+                      gustavo@gustavoreis.ia.br
                     </a>
                     <a
                       href="https://linkedin.com/in/gustavoreis-ai"
