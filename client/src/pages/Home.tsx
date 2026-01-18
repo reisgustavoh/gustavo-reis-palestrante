@@ -239,7 +239,7 @@ export default function Home() {
                     document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })
                   }
                 >
-                  Quero uma Palestra
+                  Agendar uma conversa
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
 
@@ -586,6 +586,102 @@ export default function Home() {
   </div>
 </section>
 
+ {/* Para quem é / Para quem não é */}
+<section
+  id="publico"
+  className="py-20 md:py-32 bg-gradient-to-br from-primary/10 to-accent/10"
+>
+  <div className="container">
+    <div className="max-w-4xl mx-auto text-center mb-16">
+      <h2 className="text-3xl md:text-5xl font-bold mb-6">Para quem é</h2>
+      <p className="text-xl text-muted-foreground">
+        Um guia rápido para saber se esta palestra faz sentido para o seu contexto.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {/* Para quem é */}
+      <Card className="border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
+        <CardHeader>
+          <div className="flex items-start gap-4">
+            <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
+              <Users className="h-7 w-7" />
+            </div>
+            <div className="flex-1">
+              <CardTitle className="text-xl">Para quem é</CardTitle>
+              <CardDescription className="text-base mt-1">
+                Quando esta palestra tende a gerar mais valor.
+              </CardDescription>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+              <span className="text-muted-foreground">
+                Empresas que sabem que a Inteligência Artificial é estratégica e querem usá-la com critério.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+              <span className="text-muted-foreground">
+                Líderes e equipes que já tiveram contato com IA e buscam clareza para avançar com mais segurança.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+              <span className="text-muted-foreground">
+                Organizações preocupadas com riscos, dados sensíveis e decisões responsáveis.
+              </span>
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* Para quem não é */}
+      <Card className="border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
+        <CardHeader>
+          <div className="flex items-start gap-4">
+            <div className="rounded-2xl p-3 bg-destructive/10 text-destructive ring-1 ring-destructive/15">
+              <ShieldCheck className="h-7 w-7" />
+            </div>
+            <div className="flex-1">
+              <CardTitle className="text-xl">Para quem não é</CardTitle>
+              <CardDescription className="text-base mt-1">
+                Perfis que normalmente buscam outro tipo de solução.
+              </CardDescription>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
+              <span className="text-muted-foreground">
+                Pessoas ou equipes que buscam treinamento técnico em ferramentas, linguagens ou plataformas específicas.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
+              <span className="text-muted-foreground">
+                Profissionais interessados em cursos operacionais, certificações ou capacitação prática.
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
+              <span className="text-muted-foreground">
+                Organizações que procuram implementação, desenvolvimento ou consultoria contínua em IA.
+              </span>
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>
+               
+
 
       {/* Palestras Section - Benefit Focused */}
       <section id="palestras" className="py-20 md:py-32 bg-background">
@@ -777,7 +873,7 @@ export default function Home() {
                 element?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Solicitar Proposta Personalizada <ArrowRight className="ml-2 h-5 w-5" />
+              Agendar uma conversa <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </div>
@@ -1028,7 +1124,7 @@ export default function Home() {
                 element?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Solicitar Proposta <ArrowRight className="ml-2 h-5 w-5" />
+              Agendar uma conversa<ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </div>
