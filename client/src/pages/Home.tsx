@@ -521,7 +521,7 @@ export default function Home() {
             </div>
             <div className="flex-1">
               <CardTitle className="text-xl">
-                Abertura de evento / Keynote (45–60 min)
+                Keynote / Abertura de evento (45–60 min)
               </CardTitle>
               <CardDescription className="text-base mt-1">
                 Inspiração e visão crítica sobre IA para grandes públicos.
