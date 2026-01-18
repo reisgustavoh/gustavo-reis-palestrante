@@ -202,12 +202,12 @@ export default function Home() {
             <div className="order-2 lg:order-1 text-white text-center lg:text-left space-y-5 min-w-0 w-full">
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight break-words">
-                Transforme sua Organização com{" "}
-                <span className="text-accent">Inteligência Artificial</span>
+                Inteligência artificial{" "}
+                <span className="text-accent">de verdade.</span>
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-                Do conselho ao chão de fábrica: palestras que capacitam toda a organização para uso, governança e adoção em escala de IA com resultados comprovados e segurança.
+                Palestras que orientam líderes e equipes a usar a IA de forma responsável, segura e orientada a resultados.
               </p>
 
               <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
