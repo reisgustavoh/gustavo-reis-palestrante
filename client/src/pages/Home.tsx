@@ -207,7 +207,7 @@ export default function Home() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-                Do boardroom ao chão de fábrica: palestras que capacitam toda a organização para uso, governança e adoção em escala de IA com resultados comprovados e segurança.
+                Do conselho ao chão de fábrica: palestras que capacitam toda a organização para uso, governança e adoção em escala de IA com resultados comprovados e segurança.
               </p>
 
               <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
