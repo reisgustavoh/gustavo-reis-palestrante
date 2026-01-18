@@ -495,73 +495,92 @@ export default function Home() {
         </div>
       </section>
 
-{/* Formatos de Palestra */}
-<section id="formatos" className="py-20 md:py-32 bg-background">
-  <div className="container">
+{/* Formatos de palestra */}
+<section
+  id="formatos"
+  className="relative py-20 md:py-32 bg-gradient-to-b from-background to-muted/30 overflow-hidden"
+>
+  {/* elementos decorativos (mesmo estilo do site) */}
+  <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+  <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+
+  <div className="container relative">
     <div className="max-w-4xl mx-auto text-center mb-16">
-      <h2 className="text-3xl md:text-5xl font-bold mb-6">
-        Formatos de Palestra
-      </h2>
+      <h2 className="text-3xl md:text-5xl font-bold mb-6">Formatos de palestra</h2>
       <p className="text-xl text-muted-foreground">
-        Diferentes formatos para diferentes objetivos, públicos e momentos da organização
+        Escolha o formato ideal para o seu público, contexto e objetivo.
       </p>
     </div>
 
     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
+      <Card className="group border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
         <CardHeader>
-          <CardTitle className="text-xl">
-            Abertura de evento / Keynote (45–60 min)
-          </CardTitle>
+          <div className="flex items-start gap-4">
+            <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
+              <Star className="h-7 w-7" />
+            </div>
+            <div className="flex-1">
+              <CardTitle className="text-xl">
+                Abertura de evento / Keynote (45–60 min)
+              </CardTitle>
+              <CardDescription className="text-base mt-1">
+                Inspiração e visão crítica sobre IA para grandes públicos.
+              </CardDescription>
+            </div>
+          </div>
         </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">
-            Inspiração e visão crítica sobre Inteligência Artificial para grandes públicos,
-            conectando tendências, riscos e oportunidades reais.
-          </p>
-        </CardContent>
       </Card>
 
-      <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
+      <Card className="group border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
         <CardHeader>
-          <CardTitle className="text-xl">
-            Palestra de Letramento em IA (60–90 min)
-          </CardTitle>
+          <div className="flex items-start gap-4">
+            <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
+              <Target className="h-7 w-7" />
+            </div>
+            <div className="flex-1">
+              <CardTitle className="text-xl">
+                Palestra de orientação (60–90 min)
+              </CardTitle>
+              <CardDescription className="text-base mt-1">
+                Clareza e critério para líderes e equipes tomarem decisões melhores sobre IA.
+              </CardDescription>
+            </div>
+          </div>
         </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">
-            Clareza e critério para líderes e equipes entenderem o que é IA,
-            onde ela gera valor, quais são os riscos e como tomar decisões melhores.
-          </p>
-        </CardContent>
       </Card>
 
-      <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
+      <Card className="group border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
         <CardHeader>
-          <CardTitle className="text-xl">
-            Masterclass Executiva (90–120 min)
-          </CardTitle>
+          <div className="flex items-start gap-4">
+            <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
+              <Award className="h-7 w-7" />
+            </div>
+            <div className="flex-1">
+              <CardTitle className="text-xl">
+                Masterclass Executiva (90–120 min)
+              </CardTitle>
+              <CardDescription className="text-base mt-1">
+                Aprofundamento conceitual para diretorias e lideranças seniores.
+              </CardDescription>
+            </div>
+          </div>
         </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">
-            Aprofundamento conceitual e estratégico para diretorias e lideranças seniores,
-            com foco em adoção, governança e impacto no negócio.
-          </p>
-        </CardContent>
       </Card>
 
-      <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
+      <Card className="group border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
         <CardHeader>
-          <CardTitle className="text-xl">
-            Painel, Q&amp;A ou moderação
-          </CardTitle>
+          <div className="flex items-start gap-4">
+            <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
+              <Users className="h-7 w-7" />
+            </div>
+            <div className="flex-1">
+              <CardTitle className="text-xl">Painel, Q&amp;A ou moderação</CardTitle>
+              <CardDescription className="text-base mt-1">
+                Participação especializada em debates e discussões sobre IA.
+              </CardDescription>
+            </div>
+          </div>
         </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">
-            Participação especializada em debates e discussões sobre Inteligência Artificial,
-            riscos, governança e decisões estratégicas.
-          </p>
-        </CardContent>
       </Card>
     </div>
   </div>
