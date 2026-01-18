@@ -495,6 +495,79 @@ export default function Home() {
         </div>
       </section>
 
+{/* Formatos de Palestra */}
+<section id="formatos" className="py-20 md:py-32 bg-background">
+  <div className="container">
+    <div className="max-w-4xl mx-auto text-center mb-16">
+      <h2 className="text-3xl md:text-5xl font-bold mb-6">
+        Formatos de Palestra
+      </h2>
+      <p className="text-xl text-muted-foreground">
+        Diferentes formatos para diferentes objetivos, públicos e momentos da organização
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
+        <CardHeader>
+          <CardTitle className="text-xl">
+            Abertura de evento / Keynote (45–60 min)
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">
+            Inspiração e visão crítica sobre Inteligência Artificial para grandes públicos,
+            conectando tendências, riscos e oportunidades reais.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
+        <CardHeader>
+          <CardTitle className="text-xl">
+            Palestra de Letramento em IA (60–90 min)
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">
+            Clareza e critério para líderes e equipes entenderem o que é IA,
+            onde ela gera valor, quais são os riscos e como tomar decisões melhores.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
+        <CardHeader>
+          <CardTitle className="text-xl">
+            Masterclass Executiva (90–120 min)
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">
+            Aprofundamento conceitual e estratégico para diretorias e lideranças seniores,
+            com foco em adoção, governança e impacto no negócio.
+          </p>
+        </CardContent>
+      </Card>
+
+      <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
+        <CardHeader>
+          <CardTitle className="text-xl">
+            Painel, Q&amp;A ou moderação
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">
+            Participação especializada em debates e discussões sobre Inteligência Artificial,
+            riscos, governança e decisões estratégicas.
+          </p>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>
+
+
       {/* Palestras Section - Benefit Focused */}
       <section id="palestras" className="py-20 md:py-32 bg-background">
         <div className="container">
