@@ -250,7 +250,7 @@ export default function Home() {
               </p>
 
               <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Mais de <strong>700 modelos implementados</strong>, gerando
+                Mais de <strong>100+ modelos implementados</strong>, gerando
                 <strong> R$750 milhões</strong> em impacto para empresas como Azul,
                 Hapvida e Vallourec.
               </p>
@@ -303,7 +303,7 @@ export default function Home() {
               <div className="grid grid-cols-2 md:grid-cols-2 gap-4 pt-6 w-full">
 
                 <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20 text-center w-full">
-                  <p className="text-2xl md:text-3xl font-bold text-accent">700+</p>
+                  <p className="text-2xl md:text-3xl font-bold text-accent">100+</p>
                   <p className="text-xs md:text-sm text-white/80">Modelos Implementados</p>
                 </div>
 
@@ -396,7 +396,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Diretor de IA na HopAI há 9 anos, com 700+ modelos implementados gerando R$750M
+                  Diretor de IA na HopAI há 9 anos, com 100+ modelos implementados gerando R$750M
                   em resultados reais para empresas como Azul, Hapvida e Vallourec.
                 </p>
                 <div className="space-y-2">
@@ -1042,7 +1042,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  700+ modelos de IA implementados, R$750M em resultados para grandes empresas
+                  100+ modelos de IA implementados, R$750M em resultados para grandes empresas
                 </p>
               </CardContent>
             </Card>
