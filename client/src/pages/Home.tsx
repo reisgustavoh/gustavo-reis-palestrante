@@ -319,7 +319,7 @@ export default function Home() {
 
                 <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-white/20 text-center w-full">
                   <p className="text-2xl md:text-3xl font-bold text-accent">2.500%</p>
-                  <p className="text-xs md:text-sm text-white/80">Produtividade</p>
+                  <p className="text-xs md:text-sm text-white/80">Produtividade aumentada em clientes</p>
                 </div>
 
               </div>
