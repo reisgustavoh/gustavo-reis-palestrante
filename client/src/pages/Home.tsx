@@ -35,6 +35,7 @@ export default function Home() {
     empresa: "",
     cargo: "",
     mensagem: "",
+    botcheck: ""
   });
 
 
@@ -53,11 +54,49 @@ export default function Home() {
   }, []);
 
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Mensagem enviada com sucesso! Entrarei em contato em breve.");
-    setFormData({ nome: "", email: "", empresa: "", cargo: "", mensagem: "" });
+
+    try {
+      const payload = {
+        access_key: "2cef7097-3af5-4652-9934-b5abf321d9b0",
+        subject: `Novo contato (Palestras) - ${formData.empresa}`,
+        nome: formData.nome,
+        email: formData.email,
+        empresa: formData.empresa,
+        cargo: formData.cargo,
+        mensagem: formData.mensagem,
+        botcheck: formData.botcheck || ""
+      };
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+
+      if (!data.success) {
+        throw new Error(data.message || "Erro ao enviar formulário");
+      }
+
+      toast.success("Mensagem enviada com sucesso! Entrarei em contato em breve.");
+
+      setFormData({
+        nome: "",
+        email: "",
+        empresa: "",
+        cargo: "",
+        mensagem: "",
+        botcheck: ""
+      });
+    } catch (err) {
+      console.error(err);
+      toast.error("Erro ao enviar. Tente novamente ou use o email.");
+    }
   };
+
 
   const blocoFundamentos = [
     {
@@ -495,192 +534,192 @@ export default function Home() {
         </div>
       </section>
 
-{/* Formatos de palestra */}
-<section
-  id="formatos"
-  className="relative py-20 md:py-32 bg-gradient-to-b from-background to-muted/30 overflow-hidden"
->
-  {/* elementos decorativos (mesmo estilo do site) */}
-  <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
-  <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+      {/* Formatos de palestra */}
+      <section
+        id="formatos"
+        className="relative py-20 md:py-32 bg-gradient-to-b from-background to-muted/30 overflow-hidden"
+      >
+        {/* elementos decorativos (mesmo estilo do site) */}
+        <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
 
-  <div className="container relative">
-    <div className="max-w-4xl mx-auto text-center mb-16">
-      <h2 className="text-3xl md:text-5xl font-bold mb-6">Formatos de palestra</h2>
-      <p className="text-xl text-muted-foreground">
-        Escolha o formato ideal para o seu público, contexto e objetivo.
-      </p>
-    </div>
-
-    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      <Card className="group border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
-        <CardHeader>
-          <div className="flex items-start gap-4">
-            <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
-              <Star className="h-7 w-7" />
-            </div>
-            <div className="flex-1">
-              <CardTitle className="text-xl">
-                Keynote / Abertura de evento (45–60 min)
-              </CardTitle>
-              <CardDescription className="text-base mt-1">
-                Inspiração e visão crítica sobre IA para grandes públicos.
-              </CardDescription>
-            </div>
+        <div className="container relative">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Formatos de palestra</h2>
+            <p className="text-xl text-muted-foreground">
+              Escolha o formato ideal para o seu público, contexto e objetivo.
+            </p>
           </div>
-        </CardHeader>
-      </Card>
 
-      <Card className="group border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
-        <CardHeader>
-          <div className="flex items-start gap-4">
-            <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
-              <Target className="h-7 w-7" />
-            </div>
-            <div className="flex-1">
-              <CardTitle className="text-xl">
-                Palestra de orientação (60–90 min)
-              </CardTitle>
-              <CardDescription className="text-base mt-1">
-                Clareza e critério para líderes e equipes tomarem decisões melhores sobre IA.
-              </CardDescription>
-            </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <Card className="group border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                  <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
+                    <Star className="h-7 w-7" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl">
+                      Keynote / Abertura de evento (45–60 min)
+                    </CardTitle>
+                    <CardDescription className="text-base mt-1">
+                      Inspiração e visão crítica sobre IA para grandes públicos.
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+
+            <Card className="group border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                  <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
+                    <Target className="h-7 w-7" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl">
+                      Palestra de orientação (60–90 min)
+                    </CardTitle>
+                    <CardDescription className="text-base mt-1">
+                      Clareza e critério para líderes e equipes tomarem decisões melhores sobre IA.
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+
+            <Card className="group border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                  <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
+                    <Award className="h-7 w-7" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl">
+                      Masterclass Executiva (90–120 min)
+                    </CardTitle>
+                    <CardDescription className="text-base mt-1">
+                      Aprofundamento conceitual para diretorias e lideranças seniores.
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+
+            <Card className="group border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                  <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
+                    <Users className="h-7 w-7" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl">Painel, Q&amp;A ou moderação</CardTitle>
+                    <CardDescription className="text-base mt-1">
+                      Participação especializada em debates e discussões sobre IA.
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
           </div>
-        </CardHeader>
-      </Card>
+        </div>
+      </section>
 
-      <Card className="group border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
-        <CardHeader>
-          <div className="flex items-start gap-4">
-            <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
-              <Award className="h-7 w-7" />
-            </div>
-            <div className="flex-1">
-              <CardTitle className="text-xl">
-                Masterclass Executiva (90–120 min)
-              </CardTitle>
-              <CardDescription className="text-base mt-1">
-                Aprofundamento conceitual para diretorias e lideranças seniores.
-              </CardDescription>
-            </div>
+      {/* Para quem é / Para quem não é */}
+      <section
+        id="publico"
+        className="py-20 md:py-32 bg-gradient-to-br from-primary/10 to-accent/10"
+      >
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Para quem é</h2>
+            <p className="text-xl text-muted-foreground">
+              Um guia rápido para saber se esta palestra faz sentido para o seu contexto.
+            </p>
           </div>
-        </CardHeader>
-      </Card>
 
-      <Card className="group border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
-        <CardHeader>
-          <div className="flex items-start gap-4">
-            <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
-              <Users className="h-7 w-7" />
-            </div>
-            <div className="flex-1">
-              <CardTitle className="text-xl">Painel, Q&amp;A ou moderação</CardTitle>
-              <CardDescription className="text-base mt-1">
-                Participação especializada em debates e discussões sobre IA.
-              </CardDescription>
-            </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Para quem é */}
+            <Card className="border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                  <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
+                    <Users className="h-7 w-7" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl">Para quem é</CardTitle>
+                    <CardDescription className="text-base mt-1">
+                      Quando esta palestra tende a gerar mais valor.
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">
+                      Empresas que sabem que a Inteligência Artificial é estratégica e querem usá-la com critério.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">
+                      Líderes e equipes que já tiveram contato com IA e buscam clareza para avançar com mais segurança.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">
+                      Organizações preocupadas com riscos, dados sensíveis e decisões responsáveis.
+                    </span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Para quem não é */}
+            <Card className="border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                  <div className="rounded-2xl p-3 bg-destructive/10 text-destructive ring-1 ring-destructive/15">
+                    <ShieldCheck className="h-7 w-7" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl">Para quem não é</CardTitle>
+                    <CardDescription className="text-base mt-1">
+                      Perfis que normalmente buscam outro tipo de solução.
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">
+                      Pessoas ou equipes que buscam treinamento técnico em ferramentas, linguagens ou plataformas específicas.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">
+                      Profissionais interessados em cursos operacionais, certificações ou capacitação prática.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">
+                      Organizações que procuram implementação, desenvolvimento ou consultoria contínua em IA.
+                    </span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
-        </CardHeader>
-      </Card>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
- {/* Para quem é / Para quem não é */}
-<section
-  id="publico"
-  className="py-20 md:py-32 bg-gradient-to-br from-primary/10 to-accent/10"
->
-  <div className="container">
-    <div className="max-w-4xl mx-auto text-center mb-16">
-      <h2 className="text-3xl md:text-5xl font-bold mb-6">Para quem é</h2>
-      <p className="text-xl text-muted-foreground">
-        Um guia rápido para saber se esta palestra faz sentido para o seu contexto.
-      </p>
-    </div>
-
-    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      {/* Para quem é */}
-      <Card className="border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
-        <CardHeader>
-          <div className="flex items-start gap-4">
-            <div className="rounded-2xl p-3 bg-primary/10 text-primary ring-1 ring-primary/15">
-              <Users className="h-7 w-7" />
-            </div>
-            <div className="flex-1">
-              <CardTitle className="text-xl">Para quem é</CardTitle>
-              <CardDescription className="text-base mt-1">
-                Quando esta palestra tende a gerar mais valor.
-              </CardDescription>
-            </div>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-3">
-            <li className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-              <span className="text-muted-foreground">
-                Empresas que sabem que a Inteligência Artificial é estratégica e querem usá-la com critério.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-              <span className="text-muted-foreground">
-                Líderes e equipes que já tiveram contato com IA e buscam clareza para avançar com mais segurança.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-              <span className="text-muted-foreground">
-                Organizações preocupadas com riscos, dados sensíveis e decisões responsáveis.
-              </span>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
-
-      {/* Para quem não é */}
-      <Card className="border-2 bg-background/70 backdrop-blur hover:shadow-2xl transition-all hover:-translate-y-1 hover:border-primary">
-        <CardHeader>
-          <div className="flex items-start gap-4">
-            <div className="rounded-2xl p-3 bg-destructive/10 text-destructive ring-1 ring-destructive/15">
-              <ShieldCheck className="h-7 w-7" />
-            </div>
-            <div className="flex-1">
-              <CardTitle className="text-xl">Para quem não é</CardTitle>
-              <CardDescription className="text-base mt-1">
-                Perfis que normalmente buscam outro tipo de solução.
-              </CardDescription>
-            </div>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-3">
-            <li className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
-              <span className="text-muted-foreground">
-                Pessoas ou equipes que buscam treinamento técnico em ferramentas, linguagens ou plataformas específicas.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
-              <span className="text-muted-foreground">
-                Profissionais interessados em cursos operacionais, certificações ou capacitação prática.
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
-              <span className="text-muted-foreground">
-                Organizações que procuram implementação, desenvolvimento ou consultoria contínua em IA.
-              </span>
-            </li>
-          </ul>
-        </CardContent>
-      </Card>
-    </div>
-  </div>
-</section>
-               
 
 
       {/* Palestras Section - Benefit Focused */}
@@ -1113,8 +1152,7 @@ export default function Home() {
               Pronto para Transformar sua Organização?
             </h2>
             <p className="text-xl mb-8 text-white/90">
-              Agende uma conversa e descubra como levar conteúdo de alto impacto sobre IA e
-              governança para sua equipe
+              Agende uma conversa e descubra como levar conteúdo de alto impacto sobre IA para sua equipe
             </p>
             <Button
               size="lg"
@@ -1187,9 +1225,24 @@ export default function Home() {
                         value={formData.cargo}
                         onChange={(e) => setFormData({ ...formData, cargo: e.target.value })}
                         placeholder="Seu cargo"
+
                       />
+
+                      <input
+                        type="text"
+                        name="botcheck"
+                        value={formData.botcheck}
+                        onChange={(e) => setFormData({ ...formData, botcheck: e.target.value })}
+                        className="hidden"
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+
+
                     </div>
                   </div>
+
+
 
                   <div className="space-y-2">
                     <Label htmlFor="mensagem">Como posso ajudar sua organização? *</Label>
