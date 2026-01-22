@@ -99,123 +99,127 @@ export default function Home() {
 
 
   const blocoFundamentos = [
-    {
-      icon: <BookOpen className="h-10 w-10" />,
-      titulo: "Introdução à Inteligência Artificial",
-      subtitulo: "O Que É, Como Funciona e Como Começar com Segurança",
-      beneficio:
-        "Entenda de forma clara e prática o que é IA hoje, como ela funciona, onde gera valor e como iniciar a adoção com segurança e realismo.",
-      topicos: [
-        "Fundamentos de IA explicados sem jargão",
-        "IA tradicional, machine learning, IA generativa e agentes",
-        "Onde IA realmente gera valor nos negócios",
-        "Principais casos de uso corporativos.",
-      ],
-      destaque: true,
-    },
+  {
+    icon: <BookOpen className="h-10 w-10" />,
+    titulo: "IA de Verdade: do Hype à Operação",
+    subtitulo: "O Que Líderes Precisam Entender para Agir com Critério",
+    beneficio:
+      "Um mapa claro do que é IA hoje, onde ela realmente cria valor e o que precisa existir para funcionar no mundo real — sem jargão e sem promessa vazia.",
+    topicos: [
+      "O que muda quando IA precisa funcionar na operação",
+      "IA tradicional, ML, IA generativa e agentes (sem confusão)",
+      "Onde IA costuma gerar impacto — e onde costuma falhar",
+      "Como começar com critério, segurança e expectativas realistas",
+    ],
+    destaque: true,
+  },
 
-    // MIGRADO DO BLOCO 5
-    {
-      icon: <Sparkles className="h-10 w-10" />,
-      titulo: "IA Generativa e o Renascimento do Conhecimento Corporativo",
-      subtitulo: "Futuro do Trabalho e Reinvenção Corporativa",
-      beneficio:
-        "Descubra como IA generativa está redefinindo criação de conhecimento, produtividade e inovação nas organizações",
-      topicos: [
-        "LLMs e transformação do trabalho do conhecimento",
-        "Casos de uso de IA generativa em empresas",
-        "Gestão de conhecimento com IA",
-        "Preparação para o futuro da IA.",
-      ],
-      destaque: true,
-    },
-  ];
-  const blocoEstrategia = [
-    {
-      icon: <Target className="h-10 w-10" />,
-      titulo: "Por que a IA Falha nas Empresas",
-      subtitulo: "(e Como Corrigir o Sistema, Não o Modelo)",
-      beneficio:
-        "Entenda os motivos reais por trás do fracasso de projetos de IA e aprenda a estruturar sistemas organizacionais que garantem sucesso",
-      topicos: [
-        "Diagnóstico de falhas sistêmicas",
-        "Alinhamento estratégico vs. otimização técnica",
-        "Governança de portfólio de IA",
-        "Framework de maturidade organizacional",
-      ],
-      destaque: true,
-    },
-    {
-      icon: <Building2 className="h-10 w-10" />,
-      titulo: "IA como Infraestrutura de Negócio",
-      subtitulo: "Visão Sistêmica e Adoção Organizacional",
-      beneficio:
-        "Transforme IA de projeto piloto para infraestrutura crítica que sustenta operações e decisões estratégicas",
-      topicos: [
-        "IA como capacidade organizacional",
-        "Arquitetura de dados para escala",
-        "Integração com processos de negócio",
-        "Roadmap de adoção progressiva",
-      ],
-      destaque: true,
-    },
-  ];
-  const blocoLideranca = [
-    {
-      icon: <Users className="h-8 w-8" />,
-      titulo: "Liderando Organizações Impulsionadas por IA",
-      subtitulo: "Cultura, Confiança e Transformação Executiva",
-      beneficio:
-        "Desenvolva as competências de liderança necessárias para conduzir transformação digital com IA em grande escala",
-      topicos: [
-        "Visão estratégica de IA",
-        "Construção de cultura data-driven",
-        "Gestão de mudança e resistência",
-        "Liderança através de insights de IA",
-      ],
-    },
-    {
-      icon: <ShieldCheck className="h-8 w-8" />,
-      titulo: "Governança de IA",
-      subtitulo: "Do Compliance à Confiança Institucional",
-      beneficio:
-        "Implemente frameworks de governança que vão além da conformidade, construindo confiança e valor de longo prazo",
-      topicos: [
-        "Frameworks de governança de IA",
-        "GDPR, Lei de IA e compliance",
-        "Mitigação de viés e riscos éticos",
-        "Auditoria e monitoramento contínuo",
-      ],
-    },
-  ];
-  const blocoValor = [
-    {
-      icon: <TrendingUp className="h-8 w-8" />,
-      titulo: "Do Modelo ao Valor",
-      subtitulo: "Medindo o Impacto Real da IA",
-      beneficio:
-        "Aprenda a medir e comunicar o valor real gerado por IA, desde métricas técnicas até impacto financeiro",
-      topicos: [
-        "Métricas de negócio vs. métricas técnicas",
-        "Cálculo de ROI em projetos de IA",
-        "Dashboards executivos de IA",
-        "Comunicação de valor para stakeholders",
-      ],
-    },
-    {
-      icon: <Lightbulb className="h-8 w-8" />,
-      titulo: "Forecasting Inteligente",
-      subtitulo: "O Laboratório para Aprender IA de Verdade",
-      beneficio:
-        "Use previsão de demanda como caso prático para dominar conceitos avançados de IA aplicada a negócios",
-      topicos: [
-        "Séries temporais e modelos preditivos",
-        "Integração de variáveis de negócio",
-        "Validação e ajuste de modelos",
-        "Implantação e monitoramento em produção",
-      ],
-    },
-  ];
+  // MIGRADO DO BLOCO 5
+  {
+    icon: <Sparkles className="h-10 w-10" />,
+    titulo: "IA Generativa no Mundo Real",
+    subtitulo: "Conhecimento, Produtividade e Qualidade de Execução",
+    beneficio:
+      "Entenda como IA generativa pode melhorar trabalho do conhecimento e operações — e o que separa pilotos empolgantes de soluções úteis e seguras.",
+    topicos: [
+      "Onde IA generativa cria valor (e onde vira ruído)",
+      "Assistentes, busca de conhecimento e automação com governança",
+      "Como desenhar casos de uso que sobrevivem ao dia a dia",
+      "Riscos práticos: vazamento, alucinação e dependência de processo",
+    ],
+    destaque: true,
+  },
+];
+
+const blocoEstrategia = [
+  {
+    icon: <Target className="h-10 w-10" />,
+    titulo: "Por que a IA Falha nas Empresas",
+    subtitulo: "(e Como Corrigir o Sistema, Não o Modelo)",
+    beneficio:
+      "Os motivos reais por trás de projetos que não escalam — e como criar as condições para IA virar capacidade operacional, não experimento.",
+    topicos: [
+      "Falhas sistêmicas: dados, processo, dono, incentivo e confiança",
+      "A diferença entre piloto bonito e operação sustentável",
+      "Como escolher problemas e priorizar portfólio com critério",
+      "Roteiro de maturidade: do primeiro caso ao uso recorrente",
+    ],
+    destaque: true,
+  },
+  {
+    icon: <Building2 className="h-10 w-10" />,
+    titulo: "IA como Infraestrutura Operacional",
+    subtitulo: "Como Sair do Piloto e Entrar na Rotina",
+    beneficio:
+      "Transforme IA em parte do jeito de operar: integrada a processos, governada, monitorada e usada por quem decide e por quem executa.",
+    topicos: [
+      "IA como capacidade: dados, produto, operação e governança",
+      "Integração com processos (S&OP, planejamento, execução)",
+      "Arquitetura mínima para escalar com segurança",
+      "Roadmap prático: valor rápido sem comprometer o futuro",
+    ],
+    destaque: true,
+  },
+];
+
+const blocoLideranca = [
+  {
+    icon: <Users className="h-8 w-8" />,
+    titulo: "Liderando com IA na Prática",
+    subtitulo: "Confiança, Cultura e Execução em Ambientes Reais",
+    beneficio:
+      "Como conduzir a transformação com IA sem cair em modismo: alinhando expectativas, reduzindo resistência e fazendo a organização usar o que foi construído.",
+    topicos: [
+      "Como líderes criam confiança em números e modelos",
+      "Cultura data-driven que não vira burocracia",
+      "Mudança organizacional: adoção, incentivos e responsabilidade",
+      "Como transformar insight em rotina operacional",
+    ],
+  },
+  {
+    icon: <ShieldCheck className="h-8 w-8" />,
+    titulo: "Governança de IA que Funciona",
+    subtitulo: "Segurança e Confiança sem Travar a Execução",
+    beneficio:
+      "Governança como acelerador: regras claras, riscos controlados e decisões rápidas para IA operar com segurança — especialmente em contextos industriais.",
+    topicos: [
+      "Princípios práticos: risco, dados, uso e responsabilidade",
+      "Controles essenciais (sem virar compliance performático)",
+      "Avaliação, auditoria e monitoramento em produção",
+      "Como governar IA generativa e dados sensíveis na prática",
+    ],
+  },
+];
+
+const blocoValor = [
+  {
+    icon: <TrendingUp className="h-8 w-8" />,
+    titulo: "Do Modelo ao Impacto",
+    subtitulo: "Como Medir Valor sem se Perder em Métricas Técnicas",
+    beneficio:
+      "Aprenda a medir e comunicar valor de IA de forma que a empresa entenda — conectando métricas, custo, risco e impacto operacional.",
+    topicos: [
+      "Métricas que importam: serviço, custo, capital e risco",
+      "ROI sem ficção: hipóteses, baseline e atribuição",
+      "Indicadores executivos e cadência de acompanhamento",
+      "Quando desligar, ajustar ou escalar um caso de IA",
+    ],
+  },
+  {
+    icon: <Lightbulb className="h-8 w-8" />,
+    titulo: "Previsão que a Operação Confia",
+    subtitulo: "O Eixo do Planejamento em Operações Industriais",
+    beneficio:
+      "Por que previsão é a coluna vertebral do planejamento — e como transformar forecast em algo utilizável no S&OP, no estoque e na execução.",
+    topicos: [
+      "Acurácia não basta: utilidade, confiança e decisão",
+      "Como previsões quebram (e como evitar)",
+      "Integração com planejamento, estoques e nível de serviço",
+      "Operação contínua: monitoramento, ajuste e governança",
+    ],
+  },
+];
+
 
 
   return (
@@ -246,13 +250,13 @@ export default function Home() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-                Palestras que orientam líderes e equipes a usar a IA de forma responsável, segura e orientada a resultados.
+                Palestras que orientam líderes e equipes a usar a <strong>IA em operações industriais</strong> com critério, segurança e impacto real.
               </p>
 
               <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 Mais de <strong>100+ modelos implementados</strong>, gerando
                 <strong> R$750 milhões</strong> em impacto para empresas como Azul,
-                Hapvida e Vallourec.
+                DR Aromas e Vallourec.
               </p>
 
               {/* BOTÕES */}
@@ -380,11 +384,11 @@ export default function Home() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Por Que Contratar Gustavo Reis?
+              Por que contratar Gustavo Reis?
             </h2>
             <p className="text-xl text-muted-foreground">
-              Não é teoria. É experiência real de quem está na trincheira implementando IA em
-              grandes organizações todos os dias.
+              Porque Inteligência Artificial só gera valor quando funciona na operação real —
+              e é isso que eu faço todos os dias.
             </p>
           </div>
 
@@ -392,21 +396,22 @@ export default function Home() {
             <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
               <CardHeader>
                 <Zap className="h-12 w-12 text-primary mb-4" />
-                <CardTitle className="text-xl">Experiência Comprovada</CardTitle>
+                <CardTitle className="text-xl">Experiência aplicada</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Diretor de IA na HopAI há 9 anos, com 100+ modelos implementados gerando R$750M
-                  em resultados reais para empresas como Azul, Hapvida e Vallourec.
+                  Atuação prática em Inteligência Artificial aplicada a operações industriais,
+                  liderando projetos que saem do piloto e entram no dia a dia da operação,
+                  com impacto mensurável.
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
                     <CheckCircle2 className="h-4 w-4 text-primary" />
-                    <span>Cases reais, não teóricos</span>
+                    <span>Mais de R$750M em impacto real</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <CheckCircle2 className="h-4 w-4 text-primary" />
-                    <span>ROI comprovado</span>
+                    <span>Casos reais em ambientes industriais complexos</span>
                   </div>
                 </div>
               </CardContent>
@@ -415,21 +420,22 @@ export default function Home() {
             <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
               <CardHeader>
                 <Building2 className="h-12 w-12 text-accent mb-4" />
-                <CardTitle className="text-xl">Visão de Negócio</CardTitle>
+                <CardTitle className="text-xl">Foco na operação</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Não falo apenas de tecnologia. Trabalho diretamente com líderes e equipes para alinhar IA
-                  aos objetivos estratégicos e garantir impacto real no negócio.
+                  Não falo de IA como tendência ou promessa. Trago a visão de quem está
+                  na linha de frente aplicando IA em operações industriais complexas,
+                  onde erro custa caro, previsões precisam se sustentar e impacto é mensurável.
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
                     <CheckCircle2 className="h-4 w-4 text-accent" />
-                    <span>Linguagem executiva</span>
+                    <span>Conexão entre dados, planejamento e execução</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <CheckCircle2 className="h-4 w-4 text-accent" />
-                    <span>Foco em resultados</span>
+                    <span>IA como meio, não como fim</span>
                   </div>
                 </div>
               </CardContent>
@@ -438,21 +444,23 @@ export default function Home() {
             <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
               <CardHeader>
                 <Award className="h-12 w-12 text-primary mb-4" />
-                <CardTitle className="text-xl">Credenciais de Elite</CardTitle>
+                <CardTitle className="text-xl">Autoridade construída na prática</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  IBM Champion, Professor na Fundação Dom Cabral e Alura. Reconhecimento global por
-                  contribuições técnicas e disseminação de conhecimento.
+                  Diretor de IA e cofundador da HopAI e professor da disciplina
+                  <strong> Operações e Logística alavancadas por IA</strong> na
+                  Fundação Dom Cabral. Atuação que combina execução em campo,
+                  formação técnica sólida e educação executiva.
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
                     <CheckCircle2 className="h-4 w-4 text-primary" />
-                    <span>Reconhecimento internacional</span>
+                    <span>Experiência real levada para o palco</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <CheckCircle2 className="h-4 w-4 text-primary" />
-                    <span>Educador corporativo em IA</span>
+                    <span>Professor em programas executivos de referência</span>
                   </div>
                 </div>
               </CardContent>
@@ -460,6 +468,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* Galeria de Palestras */}
       <section className="py-20 md:py-32 bg-muted/30">
@@ -634,7 +643,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Para quem é</h2>
             <p className="text-xl text-muted-foreground">
-              Um guia rápido para saber se esta palestra faz sentido para o seu contexto.
+              Um guia rápido para entender se esta palestra faz sentido para o seu contexto operacional.
             </p>
           </div>
 
@@ -659,19 +668,22 @@ export default function Home() {
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-muted-foreground">
-                      Empresas que sabem que a Inteligência Artificial é estratégica e querem usá-la com critério.
+                      Líderes e equipes de operações, planejamento, S&OP, supply chain e áreas industriais
+                      que precisam transformar IA em impacto real no dia a dia.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-muted-foreground">
-                      Líderes e equipes que já tiveram contato com IA e buscam clareza para avançar com mais segurança.
+                      Organizações que já experimentaram IA, mas enfrentam previsões frágeis,
+                      planejamentos que não se sustentam ou decisões excessivamente negociadas.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-muted-foreground">
-                      Organizações preocupadas com riscos, dados sensíveis e decisões responsáveis.
+                      Executivos, gestores e coordenadores que buscam reduzir incerteza operacional
+                      e alinhar áreas antes de avançar em novas iniciativas de IA.
                     </span>
                   </li>
                 </ul>
@@ -698,19 +710,22 @@ export default function Home() {
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
                     <span className="text-muted-foreground">
-                      Pessoas ou equipes que buscam treinamento técnico em ferramentas, linguagens ou plataformas específicas.
+                      Pessoas ou equipes que procuram treinamento técnico em ferramentas,
+                      linguagens, plataformas ou modelos específicos.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
                     <span className="text-muted-foreground">
-                      Profissionais interessados em cursos operacionais, certificações ou capacitação prática.
+                      Profissionais interessados em cursos operacionais, certificações
+                      ou capacitação prática hands-on.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
                     <span className="text-muted-foreground">
-                      Organizações que procuram implementação, desenvolvimento ou consultoria contínua em IA.
+                      Organizações que esperam implementação, desenvolvimento ou
+                      consultoria contínua em IA como parte da palestra.
                     </span>
                   </li>
                 </ul>
