@@ -366,7 +366,7 @@ const blocoValor = [
             lg:w-[420px] /* lg: acompanha a imagem */
           "
               >
-                Especialista em Machine Learning e IA Generativa <br />
+                Especialista em IA para indústria<br />
                 Diretor de IA na HopAI • Professor FDC
               </Badge>
 
