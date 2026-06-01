@@ -250,7 +250,7 @@ const blocoValor = [
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-                Palestras que orientam líderes e equipes a usar a <strong>IA na indústria (previsão, planejamento e supply chain)</strong> com critério, segurança e impacto real.
+                Palestras que orientam líderes e equipes a usar a <strong>IA na indústria</strong> com critério, segurança e impacto real.
               </p>
 
               <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
